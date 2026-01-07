@@ -8,22 +8,24 @@
 import UIKit
 
 class InsertarViewController: UIViewController {
-
+    
+    @IBOutlet weak var txtTitulo: UITextField!
+    @IBOutlet weak var txtContenido: UITextField!
+    
+    var delegate: ObtenerDatosProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func btnInsertar(_ sender: Any) {
+        let titulo = txtTitulo.text!
+        let contenido = txtContenido.text!
+        
+        let tarea = TareaModel(titulo: titulo, contenido: contenido)
+        
+        delegate?.obtener(dato: tarea)
+        
+        self.dismiss(animated: true)
     }
-    */
-
 }

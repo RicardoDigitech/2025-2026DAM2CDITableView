@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct TareaModel {
+    var titulo: String
+    var contenido: String
+}
