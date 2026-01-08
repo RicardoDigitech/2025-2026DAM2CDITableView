@@ -48,5 +48,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let destino = segue.destination as! InsertarViewController
             destino.delegate = self
         }
+        
+        if(segue.identifier == "VER_CELDA"){
+            let destino = segue.destination as!
+            VerViewController
+            
+            let posicion = tareaTable.indexPathForSelectedRow!.row
+            let tareaSeleccionada = tareaList[posicion]
+            
+            destino.tarea = tareaSeleccionada
+        }
     }
 }

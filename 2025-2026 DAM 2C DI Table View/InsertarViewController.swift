@@ -26,6 +26,6 @@ class InsertarViewController: UIViewController {
         
         delegate?.obtener(dato: tarea)
         
-        self.dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
 }
